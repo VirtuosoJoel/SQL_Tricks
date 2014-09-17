@@ -1,0 +1,7 @@
+BULK INSERT TargetTable
+FROM 'Path\To\File.csv'
+WITH
+(
+FIELDTERMINATOR = ',',
+ROWTERMINATOR = '\n'
+)

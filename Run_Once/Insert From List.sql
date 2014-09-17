@@ -54,7 +54,7 @@ Value7	Value8	Value9
 
 I just run the macro, and get this output:
 
-INSERT INTO Table_Name ('Field1','Field2','Field3')
+INSERT INTO Table_Name ([Field1],[Field2],[Field3])
 SELECT 'Value1','Value2','Value3' UNION ALL
 SELECT 'Value4','Value5','Value6' UNION ALL
 SELECT 'Value7','Value8','Value9'

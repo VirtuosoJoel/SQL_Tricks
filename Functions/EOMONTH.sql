@@ -1,0 +1,21 @@
+IF OBJECT_ID('dbo.EOMONTH',N'FN') IS NOT NULL
+  DROP FUNCTION dbo.EOMONTH
+GO
+
+CREATE FUNCTION EOMONTH
+(
+  @date as DATETIME
+)
+RETURNS DATETIME
+BEGIN
+
+  RETURN DATEADD(millisecond,-2,DATEADD(MONTH,DATEDIFF(MONTH,0,isnull(@date,getdate()))+1,0))
+
+END
+GO
+
+select dbo.EOMONTH(NULL) as 'NULL_ARG'
+GO
+
+select dbo.EOMONTH(getdate()) as 'GETDATE_ARG'
+GO

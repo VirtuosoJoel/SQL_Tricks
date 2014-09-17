@@ -1,0 +1,16 @@
+IF OBJECT_ID('dbo.BASE64STRING', N'FN') IS NOT NULL
+	DROP FUNCTION dbo.BASE64STRING
+
+GO
+
+CREATE FUNCTION BASE64STRING (@image IMAGE)
+RETURNS VARCHAR(MAX)
+
+BEGIN
+	DECLARE @conversion VARBINARY(MAX)
+
+	SET @conversion = CAST(@image AS VARBINARY(MAX))
+
+	RETURN CAST(N'' AS XML).value('xs:base64Binary(xs:hexBinary(sql:variable("@conversion")))', 'VARCHAR(MAX)')
+
+END

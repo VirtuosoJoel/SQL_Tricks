@@ -7,7 +7,7 @@ SELECT 'Value3','Value4'
 I usually copy and paste the columns with headers from Excel into Notepad++
 Then I run a Notead++ find & replace macro which does this:
 
-(Search Mode "Regular expression")
+(Search Mode "Regular expression", untick ". matches newline")
 Find: \t
 Replace: ','
 
@@ -34,6 +34,7 @@ In document, Select the first line (Ctrl+Home, Shift+End)
 Find: ('
 Replace: ([
 
+(Untick "In Selection")
 Find: ,'
 Replace: ,[
 

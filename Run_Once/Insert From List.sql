@@ -34,7 +34,6 @@ In document, Select the first line (Ctrl+Home, Shift+End)
 Find: ('
 Replace: ([
 
-(Untick "In Selection")
 Find: ,'
 Replace: ,[
 

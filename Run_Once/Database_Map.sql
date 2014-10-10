@@ -10,7 +10,9 @@ SELECT col.table_catalog AS [Database]
 		WHEN keys.column_name IS NOT NULL
 			THEN 'PK, '
 		ELSE ''
-		END + data_type + CASE 
+		END + data_type + CASE
+		WHEN data_type IN ('ntext', 'text')
+		  THEN ''
 		WHEN data_type IN (
 				'numeric'
 				,'decimal'

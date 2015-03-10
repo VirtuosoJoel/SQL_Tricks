@@ -9,7 +9,7 @@ CREATE FUNCTION SOMONTH
 RETURNS DATETIME
 BEGIN
 
-  RETURN dateadd(month, datediff(month, 0, ISNULL(@Date,getdate())),0)
+  RETURN dateadd(year, datediff(year, 0, ISNULL(@Date,getdate())),0)
 
 END
 GO
